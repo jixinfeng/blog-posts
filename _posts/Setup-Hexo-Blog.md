@@ -6,17 +6,24 @@ tags:
 - hexo 
 - node.js 
 - tutorial
+
+mathjax: true
 ---
 
 ## 配置环境
+
 ### Mac 用户需要先安装homebrew
+
 详细步骤可以在[Homebrew 官网 ][1]找到
+
 ``` bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ### 安装 `npm`，`git` 和 `hexo`
+
 首先通过 `homebrew` 安装 `npm` 和 `git`
+
 ``` bash
 $ brew update
 $ brew install npm npv git
@@ -27,18 +34,22 @@ $ npm install -g hexo-cli
 ```
 
 ## 创建博客
+
 ### 在 github 上创建博客 repo
-`https://github.com/jixinfeng/jixinfeng.github.io`
+
+`https://github.com/{github_username}/{github_username}.github.io`
 
 注意 hexo 在部署博客的时候只会上传生成的网页，原始的 md 文件以及所在的 source 文件夹并不会被添加到 repo 中，如果希望 md 文件也能被 github 追踪，可以考虑将 source 文件夹单独创建一个独立的 repo
-`https://github.com/jixinfeng/jx.blog.source`
-并以 submodule 的形式添加到 `jixinfeng.github.io` 中
+`https://github.com/{github_username}/{blog-posts}`
+并以 submodule 的形式添加到博客 repo 中
+
 ``` bash
 $ cd {repo-dir}
 $ git submodule add {source-repo-url} source
 ```
 
 ### 创建新的 Hexo 博客
+
 ``` bash
 $ git clone {repo-address}
 $ hexo init tmp
@@ -47,6 +58,7 @@ $ mv ./tmp/.gitignore {repo-dir}
 ```
 
 ### 添加自己喜欢的主题
+
 ``` bash
 $ cd {repo-dir}
 $ git submodule add {theme-repo-url} theme/{theme-dir}
@@ -58,11 +70,7 @@ $ vim _config.yml
 ```
 
 ``` bash
-title: jx.blog() 
-subtitle: return 0
-description: 
-author: 
-language: en
+language: zh-Han
 timezone: America/New_York
 ```
 
@@ -75,7 +83,9 @@ message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 ```
 
 ## 访问博客
+
 ### 本地测试
+
 ``` bash
 $ hexo generate
 $ hexo server
@@ -104,15 +114,29 @@ $ hexo generate -d
 ```
 
 ### 添加基于 $\LaTeX$ 的数学公式
-在 Hexo 中添加 LaTeX 公式很容易，在支持 MathJax 的主题，如这个博客采用的 [next][2] 中，只需在 `_config.yml` 中开启 MathJax 支持即可。注意有些旧版本主题中自带的 MathJax CDN 地址已经失效，这个博客目前采用的设置是：
+在 Hexo 中添加 LaTeX 公式很容易，在支持 MathJax 的主题，如这个博客采用的 [next][2] 中，只需在 `_config.yml` 中开启 MathJax 支持即可。
 
+``` bash
+math:
+    per_page: true
+    
+    mathjax:
+        enable: true
 ```
-mathjax:
- enable: true
- cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+开启 `per_page` 之后，需要在文章开头处手动启用 `mathjax`
+
+``` bash
+---
+title: title.html
+date: 2017-01-01 12:01:30
+tags:
+mathjax: true
+---
 ```
 
 ## 参考：
+
 * [Hexo Documentations][3]
 * [How to setup a blog on github with Hexo][4]
 * [Using Git Submodules to Manage Your Custom Hexo Theme][5]
