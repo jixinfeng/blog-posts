@@ -62,7 +62,7 @@ $$\begin{align*}
  s.t. & \sum_{k=0}^{N-1} x_{ik}=1 & i=1,\ldots, N\\
       & x_{ik} - y_k\leq 0        & i,k=1,\ldots, N \\
       & x_{ik}+x_{jk}\leq 1       & (i,j)\in\mathcal{E}\\
-      & x_{ik},y_k\in\\{0,1\\}
+      & x_{ik},y_k\in\{0,1\}
 \end{align*}$$
 
 将题目中给定的数据按标准形式输入到 gurobi 中即可求得最优解，但是随着图规模的增加，解题所需的时间也以极快的速度增长。因此，需要对标准形式进行一些改进，进一步提高性能
