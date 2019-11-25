@@ -136,7 +136,7 @@ def root(self, node):
 | Quick Find | $O(N)$ | $O(N)$ | $O(1)$ |
 | Quick Union | $O(N)$ | $O(h)$* | $O(h)$ |
 | Weighted Quick Union | $O(N)$ | $O(log N)$ | $O(log N)$ |
-| Weighted Quick Union with Path Compression | $O(N)$ | $O(\\alpha(N))$ | $O(\\alpha(N))$ |
+| Weighted Quick Union with Path Compression | $O(N)$ | $O(\alpha(N))$ | $O(\alpha(N))$ |
 * $h$ 是树的高度
 
 ## 参考资料
