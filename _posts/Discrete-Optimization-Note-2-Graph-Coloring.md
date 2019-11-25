@@ -55,15 +55,15 @@ def greedy(node_count, edges):
 着色问题同样可以转换成标准 ILP 形式之后利用 gurobi 求解。构造方法可以参考一本老教材 [Applied Mathematical Programming][AMP] 中第九章 [Integer Programming][AMP-ch9] （整数规划）给出的例子。
 
 ### 标准形式
-令 $N=|\mathcal{V}|$ ，设置两组变量 $y\_0, y\_1, \ldots, y\_{N-1}$ 以及 $x\_{00}, x\_{01}\ldots, x\_{0(N-1)},\ldots, x\_{(N-1)(N-1)}$ 。其中 $y_k=1$ 表示使用第 $i$ 种颜色 $x\_{ik}=1$ 表示顶点 $i$ 使用颜色 $k$ 进行着色。可以列出优化问题标准形式如下：
+令 $N=|\mathcal{V}|$ ，设置两组变量 $y_0, y_1, \ldots, y_{N-1}$ 以及 $x_{00}, x_{01}\ldots, x_{0(N-1)},\ldots, x_{(N-1)(N-1)}$ 。其中 $y_k=1$ 表示使用第 $i$ 种颜色 $x_{ik}=1$ 表示顶点 $i$ 使用颜色 $k$ 进行着色。可以列出优化问题标准形式如下：
 
-$$\begin{align\*} 
-\min  & \sum y\_{i} \\\\
- s.t. & \sum\_{k=0}^{N-1} x\_{ik}=1 & i=1,\ldots, N\\\\
-      & x\_{ik} - y\_k\leq 0        & i,k=1,\ldots, N \\\\
-      & x\_{ik}+x\_{jk}\leq 1       & (i,j)\in\mathcal{E}\\\\
-      & x\_{ik},y\_k\in\\{0,1\\}
-\end{align\*}$$
+$$\begin{align*} 
+\min  & \sum y_{i} \\
+ s.t. & \sum_{k=0}^{N-1} x_{ik}=1 & i=1,\ldots, N\\
+      & x_{ik} - y_k\leq 0        & i,k=1,\ldots, N \\
+      & x_{ik}+x_{jk}\leq 1       & (i,j)\in\mathcal{E}\\
+      & x_{ik},y_k\in\\{0,1\\}
+\end{align*}$$
 
 将题目中给定的数据按标准形式输入到 gurobi 中即可求得最优解，但是随着图规模的增加，解题所需的时间也以极快的速度增长。因此，需要对标准形式进行一些改进，进一步提高性能
 

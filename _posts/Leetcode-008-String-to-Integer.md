@@ -6,8 +6,6 @@ tags:
 - string 
 - regex
 - math
-
-mathjax: true
 ---
 ## [题目要求][1]：
 实现 [`atoi`][2] 函数，注意考虑各种可能情况。
