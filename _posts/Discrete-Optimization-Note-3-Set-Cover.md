@@ -6,6 +6,8 @@ tags:
 - coursera
 - ilp
 - greedy
+
+mathjax: true
 ---
 
 ## 问题描述

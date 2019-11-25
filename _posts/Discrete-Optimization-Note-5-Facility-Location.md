@@ -5,6 +5,8 @@ tags:
 - optimization
 - coursera
 - ilp
+
+mathjax: true
 ---
 
 ## 问题描述

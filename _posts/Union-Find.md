@@ -5,6 +5,8 @@ tags:
 - graph
 - unionfind
 - tree
+
+mathjax: true
 ---
 
 ## 简介

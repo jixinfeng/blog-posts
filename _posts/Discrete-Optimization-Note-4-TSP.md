@@ -6,6 +6,8 @@ tags:
 - coursera
 - tsp
 - greedy
+
+mathjax: true
 ---
 
 ## 问题描述

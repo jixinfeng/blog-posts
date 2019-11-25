@@ -7,6 +7,8 @@ tags:
 - dp
 - ilp
 - greedy
+
+mathjax: true
 ---
 Coursera 是由斯坦福大学的教授吴恩达（[Andrew Ng][1]）和达芙妮·科勒联（[Daphne Koller][2]）合创建的一个营利性的教育科技公司，与很多大学都有合作。经过几个月的尝试，我终于在昨天晚上通过了[Coursera][3] 上由墨尔本大学提供的[Discrete Optimization][4]这一门课，拿到了[课程认证][5]。虽然最终的成绩离满分还很远，但是我觉得把我在解决作业问题中的思路记录下来是有一定意义的。我的[作业代码][6]保存在了 github 上，欢迎 star 、 fork 、发 pull request 。
 

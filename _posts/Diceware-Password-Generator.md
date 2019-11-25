@@ -4,6 +4,9 @@ date: 2017-12-07 14:17:23
 tags:
 - diceware
 - xkcd
+
+
+mathjax: true
 ---
 ![XKCD comic about password strength][image-1]
 [Diceware][1]是一种生成便于记忆并难以通过暴力穷举密码的方式。很长时间以来，网站都在建议人们使用更加复杂的密码，如：

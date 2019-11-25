@@ -4,6 +4,8 @@ date: 2017-12-14 16:02:03
 tags:
 - string
 - two pointers
+
+mathjax: true
 ---
 ## [题目要求][1]：
 输入两个字符串名叫 `needle` 和 `haystack` ，找到 `needle` 出现在 `haystack` 中的位置，如果没有出现则返回 -1 。字符串取名出自英语的 *Needle in a haystack* 即“大海捞针”。
