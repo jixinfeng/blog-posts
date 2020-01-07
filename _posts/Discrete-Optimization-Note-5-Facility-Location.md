@@ -1,5 +1,5 @@
 ---
-title: Discrete Optimization 学习笔记（5）设施选址问题
+title: Discrete Optimization 学习笔记 (5) 设施选址问题
 date: 2018-09-20 22:43:22
 tags:
 - optimization
