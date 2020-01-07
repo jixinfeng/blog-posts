@@ -28,25 +28,25 @@ mathjax: true
 
 ### 路径平移 Shift
 
-![VPR 路径平移][shift-img]
+![VRP 路径平移][shift-img]
 
 路径平移，就是将一条回路中的部分路径移动到另一条回路中的某个位置，可以正接也可以反接。如果在不违反限制条件的情况下，可以讲一整条回路平移到另一回路中，那也就相当于合并了两条回路，减少了一辆车的需求。
 
 ### 路径交换 Interchange
 
-![VPR 路径交换][interchange-img]
+![VRP 路径交换][interchange-img]
 
 路径交换，与平移类似，就是交换两个回路中各自的两端路径，由于两路径均可以在交换之后正接反接，因此一次交换可以产生四种可能的结果。
 
 ### 回路内换边 2-exchange
 
-![VPR 回路内换边][exchange-img]
+![VRP 回路内换边][exchange-img]
 
 回路内换边，和 TSP 的 2-opt 操作相同，即重新连接一条回路内两条边，进行一个“拧麻花”的操作。
 
 ### 回路间首尾重组 Ladder
 
-![VPR 回路间首尾重组][ladder-img]
+![VRP 回路间首尾重组][ladder-img]
 
 回路间首尾重组，就是在两条回路中各自设置一个断点，将两条回路断点两侧的路径重新连接形成两条新回路。根据首尾连接的方式不同，可以产生两种结果。
 
@@ -59,8 +59,8 @@ mathjax: true
 找到初始解之后，就可以开始进行局部搜索，直至达到最大搜索时间、最大搜索次数或者无法通过局部搜索找到更优解为止。求解代码在[这里][solution]。
 
 [vsp-paper]: https://www.researchgate.net/publication/318284891_A_PATH-EXCHANGE-TYPE_LOCAL_SEARCH_ALGORITHM_FOR_VEHICLE_ROUTING_AND_ITS_EFFICIENT_SEARCH_STRATEGY "VRP Paper"
-[shift-img]: /inages/vrp-shift.jpg "TSP 2-opt 优化思路"
-[interchange-img]: /images/vrp-interchange.jpg "TSP 2-opt 优化思路"
-[exchange-img]: /images/vrp-exchange.jpg "TSP 2-opt 优化思路"
-[ladder-img]: /images/vrp-ladder.jpg "TSP 2-opt 优化思路"
+[shift-img]: /images/vrp-shift.png "TSP 2-opt 优化思路"
+[interchange-img]: /images/vrp-interchange.png "TSP 2-opt 优化思路"
+[exchange-img]: /images/vrp-exchange.png "TSP 2-opt 优化思路"
+[ladder-img]: /images/vrp-ladder.png "TSP 2-opt 优化思路"
 [solution]: https://github.com/jixinfeng/discopt-soln/blob/master/week-07-vrp/ "VRP Solution"

@@ -26,7 +26,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 ``` bash
 $ brew update
-$ brew install npm npv git
+$ brew install npm git
 ```
 
 ``` bash
@@ -92,28 +92,34 @@ $ hexo server
 ```
 
 ### 部署到 github
+
 ``` bash
 $ npm i -S hexo-deployer-git
 $ hexo deploy
 ```
 
 ## 编辑内容
+
 ### 新建文章
+
 ``` bash
 $ hexo new {title}
 ```
 
 ### 编辑新文章
+
 ``` bash
 $ vim source/_posts/{title}.md
 ```
 
 ### 更新博客并重新部署
+
 ``` bash
 $ hexo generate -d
 ```
 
 ### 添加基于 $\LaTeX$ 的数学公式
+
 在 Hexo 中添加 LaTeX 公式很容易，在支持 MathJax 的主题，如这个博客采用的 [next][2] 中，只需在 `_config.yml` 中开启 MathJax 支持即可。
 
 ``` bash
@@ -133,6 +139,22 @@ date: 2017-01-01 12:01:30
 tags:
 mathjax: true
 ---
+```
+
+## 设置自定义域名
+
+在 `source` 文件夹中增加一个 `CNAME` 文件，文件名大写，内容只有一行即为自己的自定义域名。在命令行中运行
+
+``` bash
+$ dig {github_username}.github.io
+```
+
+即可得到博客托管的 IP 地址，在自己的 DNS 中加入地址即可。主意对DNS的配置不是即时生效的，需要等待几分钟再去访问你的域名试试有没有配置成功。
+
+```
+@          A             {ip_1}
+@          A             {ip_2}
+www      CNAME           {github_username}.github.io.
 ```
 
 ## 参考：
